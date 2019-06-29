@@ -23,7 +23,7 @@ import org.junit.Assert;
 public class MyPostFromTextFile {
 	 
 	Response resp ;
-	
+	//user hit the post request with json data
 	@Given("^user hit the post request from text file$")
 	public void user_hit_the_post_request_with_json_data() throws IOException{
 		
@@ -34,6 +34,8 @@ public class MyPostFromTextFile {
 				when().body(file).post("https://reqres.in/api/users");
 		resp.then().log().all();
 		resp.then().log().status();
+		
+		
 		System.out.println("====="+resp.asString());
 		
 	}
